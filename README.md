@@ -1,12 +1,63 @@
-# React + Vite
+# VS-AI
+VS-AI is a project designed to replicate the functionality of the Gemini protocol, a lightweight and privacy-focused alternative to HTTP. This project aims to provide a simple and efficient implementation for learning and experimentation purposes.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Features
 
-Currently, two official plugins are available:
+- Lightweight and minimalistic design.
+- Privacy-focused communication.
+- Easy to set up and use.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Installation
 
-## Expanding the ESLint configuration
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/your-username/Gemini-Clone.git
+    ```
+2. Navigate to the project directory:
+    ```bash
+    cd Gemini-Clone
+    ```
+3. Install dependencies:
+    ```bash
+    # Add installation instructions here
+    ```npm i
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Usage
+
+1. Start the server:
+    ```bash
+    # Add server start command here
+    ```npm run dev
+2. Access the Gemini server using a compatible client.
+
+## Contributing
+
+Contributions are welcome! Please follow these steps:
+
+1. Fork the repository.
+2. Create a new branch:
+    ```bash
+    git checkout -b feature-name
+    ```
+3. Commit your changes:
+    ```bash
+    git commit -m "Add feature description"
+    ```
+4. Push to your branch:
+    ```bash
+    git push origin feature-name
+    ```
+5. Open a pull request.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
+
+## Acknowledgments
+
+- Inspired by the Gemini protocol.
+- Thanks to the open-source community for their support.
+- Check out the [live demo](https://vs-ai.netlify.app).
+- Visit the [GitHub repository](https://github.com/vivek3931/VS-AI) for more details.
+- ![Project Screenshot](src\assets\home.png)
+- ![Project Screenshot](src\assets\chat.png)
