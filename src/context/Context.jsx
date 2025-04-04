@@ -1,5 +1,6 @@
 import { createContext, useState } from "react";
 import run from "../config/gemini";
+import { marked } from "marked";
 
 export const Context = createContext();
 
@@ -17,10 +18,10 @@ const ContextProvider = ({ children }) => {
     }, 75 * index);
   };
 
-  const newChat = () =>{
+  const newChat = () => {
     setLoading(false);
     setShowResult(false);
-  }
+  };
 
   const onSent = async (prompt) => {
     setResultData("");
@@ -32,22 +33,14 @@ const ContextProvider = ({ children }) => {
       setRecentPrompt(prompt);
     } else {
       setPrevPrompts((prev) => [...prev, input]);
-      // setPrevPrompts(input)
-      response = await run(input)
+      setRecentPrompt(input);
+      response = await run(input);
     }
-    let responseArray = response.split("**");
-    let newResponse = "";
-    for (let i = 0; i < responseArray.length; i++) {
-      if (i === 0 || i % 2 !== 1) {
-        newResponse += responseArray[i];
-      } else {
-        newResponse += "<b>" + responseArray[i] + "</b>";
-      }
-    }
-    let newResponse2 = newResponse.split("*").join("</br>");
-    let newResponseArray = newResponse2.split(" ");
-    for (let i = 0; i < newResponseArray.length; i++) {
-      const nextWord = newResponseArray[i];
+
+    let formattedResponse = marked.parse(response);
+    let formattedResponseArray = formattedResponse.split(" ");
+    for (let i = 0; i < formattedResponseArray.length; i++) {
+      const nextWord = formattedResponseArray[i];
       delayPara(i, nextWord + " ");
     }
     setLoading(false);
@@ -65,7 +58,7 @@ const ContextProvider = ({ children }) => {
     resultData,
     input,
     setInput,
-    newChat
+    newChat,
   };
 
   return <Context.Provider value={contextValue}>{children}</Context.Provider>;

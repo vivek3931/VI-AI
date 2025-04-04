@@ -34,7 +34,13 @@ const Sidebar = () => {
             <p className="recent-title">Recent</p>
             {prevPrompts.map((item, idx) => {
               return (
-                <div className="recent-entry">
+                <div
+                  key={idx}
+                  onClick={() => {
+                    loadPrompt(item);
+                  }}
+                  className="recent-entry"
+                >
                   <img src={assets.message_icon} alt="" />
                   <p>{item.slice(0, 18)}</p>
                 </div>
@@ -53,12 +59,7 @@ const Sidebar = () => {
           {extend ? <p>Activity</p> : null}
         </div>
 
-        <div
-          onClick={() => {
-            loadPrompt(item);
-          }}
-          className="bottom-item recent-entry"
-        >
+        <div className="bottom-item recent-entry">
           <img src={assets.setting_icon} alt="" />
           {extend ? <p>Settings</p> : null}
         </div>
